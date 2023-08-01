@@ -9,5 +9,5 @@ everything.
   -- Real time reminder.
   -- External Api() data that can provide info about medicine.
   -- Doctor consultation. and other feature like this.
-
-  
+# Demo ScreenSchot
+![Screenshot 2023-08-01 075016](https://github.com/T-dev98/medication-reminder/assets/133159152/a4aa95a6-3ac9-4080-9a98-ff1d1efc976e)
