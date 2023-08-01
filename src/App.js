@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import MedicationForm from "./MedicationForm";
+import MedicationList from "./MedicationList";
+import "./App.css";
 
 function App() {
+  const [medications, setMedications] = useState([]);
+
+  // Function to add a new medication
+  const addMedication = (medication) => {
+    setMedications([...medications, medication]);
+  };
+
+  // Function to delete a medication
+  const deleteMedication = (id) => {
+    setMedications(medications.filter((medication) => medication.id !== id));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Medication Reminder App</h1>
+      <MedicationForm addMedication={addMedication} />
+      <MedicationList medications={medications} deleteMedication={deleteMedication} />
     </div>
   );
 }
